@@ -1,0 +1,15 @@
+1. Pantalla de inicio (Búsqueda de Recetas):
+•	Esta pantalla permitirá a los usuarios buscar recetas basándose en ingredientes específicos.
+•	Los resultados de la búsqueda se mostrarán en una lista, donde cada elemento mostrará una imagen de la receta (si está disponible), el nombre de la receta y una breve descripción.
+•	Al hacer clic en un elemento de la lista, el usuario será llevado a la pantalla de Detalles de la Receta.
+2. Pantalla de Detalles de la Receta:
+•	Esta pantalla mostrará información detallada sobre la receta seleccionada, incluyendo el nombre completo de la receta, la imagen, la lista de ingredientes, las instrucciones de preparación y el tiempo de cocción.
+•	Debe haber un botón para guardar la receta en la lista de recetas favoritas del usuario.
+3. Pantalla de Recetas Favoritas:
+•	Esta pantalla mostrará una lista de las recetas que el usuario ha guardado como favoritas.
+•	Al hacer clic en un elemento de la lista, el usuario será llevado a la pantalla de Detalles de la Receta.
+•	Debe haber una opción para eliminar recetas de la lista de favoritas.
+4. Pantalla de Compartir Recetas:
+•	Esta pantalla permitirá a los usuarios compartir sus recetas favoritas a través de diferentes plataformas (correo electrónico, redes sociales, etc.).
+5. Pantalla de Configuración:
+•	Permite al usuario personalizar la aplicación, como cambiar el tema de la aplicación o configurar las notificaciones.
