@@ -1,6 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Icon from "react-native-vector-icons/FontAwesome";
+import Icon from "react-native-vector-icons/FontAwesome5";
 import Home from "../screens/Home";
 import Favorites from "../screens/Favorites";
 import Settings from "../screens/Settings";
@@ -9,15 +9,19 @@ const Tab = createBottomTabNavigator();
 
 export default function Navigation() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={{
+        tabBarIconStyle: { alignSelf: "center" }, // Centra el ícono
+        tabBarLabelStyle: { display: "none" }, // Oculta el texto
+      }}
+    >
       <Tab.Screen
         name="Favorites"
         component={Favorites}
         options={{
-          tabBarLabel: "Favoritos",
           headerTitle: "Favoritos",
           tabBarIcon: ({ color, size }) => (
-            <Icon name="heart" color={color} size={size} />
+            <Icon name="heart" color={color} size={size} solid />
           ),
         }}
       />
@@ -25,10 +29,10 @@ export default function Navigation() {
         name="Home"
         component={Home}
         options={{
-          tabBarLabel: "Inicio",
           headerTitle: "Inicio",
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
-            <Icon name="heart" color={color} size={size} />
+            <Icon name="user" color={color} size={size} />
           ),
         }}
       />
@@ -36,10 +40,9 @@ export default function Navigation() {
         name="Settings"
         component={Settings}
         options={{
-          tabBarLabel: "Configuracion",
-          headerTitle: "Configuracion",
+          headerTitle: "Configuración",
           tabBarIcon: ({ color, size }) => (
-            <Icon name="heart" color={color} size={size} />
+            <Icon name="cog" color={color} size={size} />
           ),
         }}
       />
