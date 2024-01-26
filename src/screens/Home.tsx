@@ -8,17 +8,17 @@ export default function Home() {
   const [modalVisible, setModalVisible] = useState(false);
 
   const openModal = () => {
-    console.log("modal open");
     setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
   };
 
   return (
     <SafeAreaView style={styles.homeContent}>
       <HomeHeader openModal={openModal} />
-      <IngredientsModal
-        modalVisible={modalVisible}
-        setModalVisible={setModalVisible}
-      />
+      <IngredientsModal modalVisible={modalVisible} closeModal={closeModal} />
     </SafeAreaView>
   );
 }

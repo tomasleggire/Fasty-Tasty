@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     fontSize: 28,
   },
   btnIngredientes: {
-    marginTop: 35,
+    marginTop: 30,
     backgroundColor: "pink",
     paddingHorizontal: 20,
     paddingVertical: 10,

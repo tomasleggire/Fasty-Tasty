@@ -1,36 +1,42 @@
-import { Modal, Text, TouchableHighlight, View, Alert } from "react-native";
+import Modal from "react-native-modal";
 import React from "react";
+import { Button, Text, View } from "react-native";
 
 interface Props {
   modalVisible: boolean;
-  setModalVisible: (x: boolean) => void;
+  closeModal: () => void;
 }
 
 export default function IngredientsModal(props: Props) {
-  const { modalVisible, setModalVisible } = props;
+  const { modalVisible, closeModal } = props;
 
   return (
-    <View style={{ marginTop: 22 }}>
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <Modal
-        animationType="slide"
-        transparent={false}
-        visible={modalVisible}
-        onRequestClose={() => {
-          setModalVisible(false);
-        }}
+        isVisible={modalVisible}
+        onBackdropPress={closeModal}
+        animationIn="zoomInDown"
+        animationOut="slideOutLeft"
+        animationInTiming={600}
+        animationOutTiming={600}
+        backdropTransitionInTiming={600}
+        backdropTransitionOutTiming={600}
+        onBackButtonPress={closeModal}
       >
-        <View style={{ marginTop: 22 }}>
-          <View>
-            <Text>Hola Mundo!</Text>
-
-            <TouchableHighlight
-              onPress={() => {
-                setModalVisible(!modalVisible);
-              }}
-            >
-              <Text>Esconder Modal</Text>
-            </TouchableHighlight>
-          </View>
+        <View
+          style={{
+            flex: 1,
+            margin: 0,
+            backgroundColor: "white",
+            padding: 22,
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: 4,
+            borderColor: "rgba(0, 0, 0, 0.1)",
+          }}
+        >
+          <Text>Hola Mundo!</Text>
+          <Button title="Cerrar" onPress={closeModal} />
         </View>
       </Modal>
     </View>
