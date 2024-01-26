@@ -1,14 +1,17 @@
 import { StyleSheet, View, Text, Pressable } from "react-native";
 import React from "react";
 
-export default function HomeHeader() {
+interface Props {
+  openModal: () => void;
+}
+
+export default function HomeHeader(props: Props) {
+  const { openModal } = props;
+
   return (
     <View style={styles.headerContent}>
       <Text style={styles.title}>¿Qué tenes a mano?</Text>
-      <Pressable
-        style={styles.btnIngredientes}
-        onPress={() => console.log("Abriendo modal")}
-      >
+      <Pressable style={styles.btnIngredientes} onPress={openModal}>
         <Text>INGREDIENTES</Text>
       </Pressable>
     </View>
